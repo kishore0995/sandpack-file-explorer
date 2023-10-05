@@ -74,6 +74,11 @@ export const FileTreeExplorer = () => {
     setTreeData(newTreeData);
   };
 
+  const handleDeleteFile = async (path: string) => {
+      console.log(path)
+        // deleteFile(path)
+  }
+
   const entryFile = getEntryFile(sandpack.files);
 
   return (
@@ -240,7 +245,7 @@ export const FileTreeExplorer = () => {
                             cursor: 'pointer',
                           }}
                           onClick={async () => {
-                            await deleteFile(
+                            await handleDeleteFile(
                               `${node?.data?.path as string}${
                                 node.droppable ? '/' : ''
                               }`
